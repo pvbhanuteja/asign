@@ -90,7 +90,7 @@ def train(epoch):
         # correct += predicted.eq(targets).sum().item()
         # correct += predicted.eq(targets.data.max(1, keepdim=True)[1]).sum()
 
-        progress_bar(batch_idx, len(trainloader), 'Loss: %.3f '% (train_loss/(batch_idx+1)))
+        progress_bar(batch_idx, len(trainloader), 'Loss: %.6f '% (train_loss/(batch_idx+1)))
     # wandb.log({"train_loss": train_loss/(batch_idx+1),
     #             "train_accuracy":100.*correct/total,
     #             "epoch":epoch})
@@ -122,7 +122,7 @@ def test(epoch):
 
             test_loss += loss.item()
 
-            progress_bar(batch_idx, len(testloader), 'Loss: %.3f '% (test_loss/(batch_idx+1)))
+            progress_bar(batch_idx, len(testloader), 'Loss: %.6f '% (test_loss/(batch_idx+1)))
 #     # Save checkpoint.
 #     acc = 100.*correct/total
 #     wandb.log({"test_loss": test_loss/(batch_idx+1),
